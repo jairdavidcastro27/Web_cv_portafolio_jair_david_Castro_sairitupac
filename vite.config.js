@@ -3,9 +3,11 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   vite: {
     server: {
-      host: '0.0.0.0',           // permite conexiones externas
-      port: 4321,                // tu puerto actual
-      allowedHosts: 'all' // permite cualquier subdominio de Localtunnel
+      host: true,     // escucha todas las interfaces
+      port: 4321,
+      strictPort: true,
+      hmr: { host: 'localhost' }, // importante para que HMR funcione
+      allowedHosts: 'all',        // debería permitir cualquier host
     },
   },
 });
