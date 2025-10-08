@@ -1,11 +1,260 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Footer from "../components/Footer.astro";
+import JobTimeline from "../components/JobTimeline.astro";
+import Navbar from "../components/Navbar.astro";
+import Project from "../components/Project.astro";
+import Skill from "../components/Skill.astro";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const SKILLS: Skill[] = [
+    { name: "React", iconUrl: "/icons/react.svg" },
+    { name: "Astro", iconUrl: "/icons/astro.svg" },
+    { name: "Express", iconUrl: "/icons/express.svg" },
+    { name: "Flask", iconUrl: "/icons/flask.svg" },
+    { name: "HTML5", iconUrl: "/icons/html.svg" },
+    { name: "CSS3", iconUrl: "/icons/css.svg" },
+    { name: "JavaScript", iconUrl: "/icons/javascript.svg" },
+    { name: "Java", iconUrl: "/icons/java.svg" },
+    { name: "Spring Boot", iconUrl: "/icons/spring.svg" },
+    { name: "Python", iconUrl: "/icons/python.svg" },
+    { name: "SQL Server", iconUrl: "/icons/sqlserver.svg" },
+    { name: "AWS", iconUrl: "/icons/aws.svg" },
+    { name: "Docker", iconUrl: "/icons/docker.svg" },
+    { name: "Linux", iconUrl: "/icons/linux.svg" },
+    { name: "Windows Server", iconUrl: "/icons/windows.svg" },
+    { name: "Cisco", iconUrl: "/icons/cisco.svg" },
+    { name: "Mikrotik", iconUrl: "/icons/mikrotik.svg" },
+    { name: "Git", iconUrl: "/icons/git.svg" },
+    { name: "GitHub", iconUrl: "/icons/github.svg" },
+    { name: "WordPress", iconUrl: "/icons/wordpress.svg" },
+    { name: "Power BI", iconUrl: "/icons/powerbi.svg" },
+    { name: "Inteligencia Artificial", iconUrl: "/icons/ai.svg" },
+];
+
+const PROJECTS: Project[] = [
+    {
+        title: "Project title",
+        urlImg: "/project1.jpg",
+        description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam voluptatem quisquam illo laborum facilis reprehenderit! Ut impedit necessitatibus suscipit vel sapiente, saepe ratione. Labore impedit vel expedita nobis necessitatibus.",
+        link: "https://example.com",
+        usedSkills: [
+            {
+                name: "JavaScript",
+                iconUrl: "/icons/javascript.png",
+            },
+            {
+                name: "CSS3",
+                iconUrl: "/icons/css.svg",
+            },
+            {
+                name: "React",
+                iconUrl: "/icons/react.png",
+            },
+        ],
+    },
+    {
+        title: "Project title",
+        urlImg: "/project2.jpg",
+        description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam voluptatem quisquam illo laborum facilis reprehenderit! Ut impedit necessitatibus suscipit vel sapiente, saepe ratione. Labore impedit vel expedita nobis necessitatibus.",
+        link: "https://example.com",
+        usedSkills: [
+            {
+                name: "JavaScript",
+                iconUrl: "/icons/javascript.png",
+            },
+            {
+                name: "CSS3",
+                iconUrl: "/icons/css.svg",
+            },
+            {
+                name: "React",
+                iconUrl: "/icons/react.png",
+            },
+        ],
+    },
+    {
+        title: "Project title",
+        urlImg: "/project3.jpg",
+        description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam voluptatem quisquam illo laborum facilis reprehenderit! Ut impedit necessitatibus suscipit vel sapiente, saepe ratione. Labore impedit vel expedita nobis necessitatibus.",
+        link: "https://example.com",
+        usedSkills: [
+            {
+                name: "JavaScript",
+                iconUrl: "/icons/javascript.png",
+            },
+            {
+                name: "CSS3",
+                iconUrl: "/icons/css.svg",
+            },
+            {
+                name: "React",
+                iconUrl: "/icons/react.png",
+            },
+        ],
+    },
+    {
+        title: "Project title",
+        urlImg: "/project4.jpg",
+        description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam voluptatem quisquam illo laborum facilis reprehenderit! Ut impedit necessitatibus suscipit vel sapiente, saepe ratione. Labore impedit vel expedita nobis necessitatibus.",
+        link: "https://example.com",
+        usedSkills: [
+            {
+                name: "JavaScript",
+                iconUrl: "/icons/javascript.png",
+            },
+            {
+                name: "CSS3",
+                iconUrl: "/icons/css.svg",
+            },
+            {
+                name: "React",
+                iconUrl: "/icons/react.png",
+            },
+        ],
+    },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Carlos Miguel | FullStack Web Developer">
+    <header
+        id="inicio"
+        class="h-dvh bg-[url('/fondo.webp')] bg-cover bg-center flex flex-col justify-between"
+    >
+        <Navbar />
+        <div class="flex flex-col items-center px-4">
+            <div class="relative max-w-5xl mx-auto pt-6 pb-4 md:pt-10 md:pb-6 flex flex-col items-center gap-4">
+                <!-- Avatar pequeño -->
+                <div class="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden ring-4 ring-custom-purple/40 shadow-lg bg-white/40 backdrop-blur-sm">
+                    <img src="/foto.jpg" alt="Foto de Jair" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div class="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-gradient-to-b from-custom-purple/20 via-custom-purple/10 to-transparent"></div>
+                <h2 class="text-xl md:text-2xl lg:text-3xl border-b border-custom-purple text-center inline-block pb-2 px-4 bg-gradient-to-r from-custom-purple/30 to-transparent rounded-t-md">
+                    Bienvenido a mi portfolio
+                </h2>
+                <h3 class="mt-6 text-2xl md:text-3xl lg:text-4xl text-center font-semibold leading-tight md:leading-snug max-w-5xl mx-auto px-4 drop-shadow-sm">
+                    Me gusta explorar cómo la informática conecta cada pieza: desde la lógica del código hasta la infraestructura que lo hace posible. 
+                    <span class="text-custom-purple font-bold">
+                        Jair David Castro Sairitupac. Ing. Sistemas 
+                    </span>.
+                </h3>
+            </div>
+        </div>
+        <div class="flex justify-center mb-10">
+            <a href="#about" class="p-4 bg-custom-purple_darker rounded-full">
+                <img
+                    src="/icons/down-arrow.svg"
+                    class="size-6 animate-bounce motion-reduce:animate-none"
+                    alt="Arrow"
+                />
+            </a>
+        </div>
+    </header>
+    <main>
+        <section
+            id="about"
+            class="bg-custom-purple_darker flex flex-col md:flex-row gap-6 md:gap-10 p-4 md:py-10 md:px-8"
+        >
+            <article class="flex flex-col gap-2 md:basis-8/12 md:max-w-[560px]">
+                <h3 class="text-center text-lg md:text-xl text-white font-bold">
+                    Habilidades Profesionales
+                </h3>
+                <div class="flex justify-center -mt-2">
+                    <span class="text-center text-gray-300"
+                        >Gracias a mi manera de ser autodidacta, he aprendido a adaptarme
+                        rápidamente a nuevos entornos y tecnologías</span
+                    >
+                </div>
+                <div class="flex justify-center gap-2 flex-wrap">
+                    {SKILLS.map((skill) => <Skill skill={skill} />)}
+                </div>
+                <div class="flex flex-col gap-3 text-gray-300 p-2 leading-relaxed">
+                    <p>
+                        Tengo experiencia en desarrollo web, redes y servidores. Trabajo con tecnologías como React, Astro, Flask, Express, Spring Boot, Python, AWS y Docker, integrando soluciones seguras y escalables. Manejo bases de datos SQL Server, administración de Windows Server y Linux, y configuración de redes Cisco, Mikrotik, fibra y WISP.
+                    </p>
+                    <p>
+                        Además, tengo conocimientos en ciberseguridad, Power BI, inteligencia artificial, WordPress, ensamblaje y soporte técnico; combinando diferentes áreas para ofrecer soluciones completas y eficientes.
+                    </p>
+                </div>
+            </article>
+            <article class="md:basis-4/12 md:flex-1">
+                <h3
+                    class="text-center md:text-left text-lg md:text-xl text-white font-bold mb-4"
+                >
+                    Experiencia
+                </h3>
+                <div class="md:pr-2">
+                    <JobTimeline />
+                </div>
+            </article>
+        </section>
+        <section
+            id="projects"
+            class="max-w-screen-lg mx-auto grid place-content-center gap-12"
+        >
+            <div class="flex justify-center mt-8">
+                <h3
+                    class="w-fit border-b border-b-custom-purple text-xl md:text-2xl lg:text-4xl font-semibold"
+                >
+                    Los proyectos de los que más orgulloso estoy
+                </h3>
+            </div>
+            <div class="w-full grid place-content-center gap-16">
+                {
+                    PROJECTS.map((project, index) => (
+                        <Project project={project} index={index} />
+                    ))
+                }
+            </div>
+        </section>
+        <section id="contact" class="mt-12 relative">
+            <div class="rounded-2xl bg-gradient-to-br from-custom-purple via-custom-purple_darker to-[#2a0f55] shadow-xl p-6 md:p-10 mx-auto max-w-2xl text-white">
+                <h2 class="mb-3 text-3xl md:text-4xl font-extrabold text-center">Hablemos por WhatsApp</h2>
+                <p class="text-center text-sm md:text-base text-white/80 mb-6 max-w-xl mx-auto">
+                    Escribe tu mensaje y te llevaré directo a WhatsApp para que lo envíes. Respondo normalmente muy rápido.
+                </p>
+                <div class="space-y-4" id="wa-chat-box">
+                    <div class="flex flex-col gap-2">
+                        <label for="wa-name" class="text-sm font-medium text-white/80">Tu nombre (opcional)</label>
+                        <input id="wa-name" type="text" placeholder="Ej: Carlos" class="px-3 py-2 rounded-md bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40 placeholder:text-white/40" />
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="wa-message" class="text-sm font-medium text-white/80">Mensaje</label>
+                        <textarea id="wa-message" rows="5" placeholder="Hola, me gustaría conversar sobre..." class="resize-none px-3 py-2 rounded-md bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40 placeholder:text-white/40"></textarea>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <button id="wa-send" class="flex items-center gap-2 px-5 py-3 rounded-lg bg-green-500 hover:bg-green-600 active:scale-[.98] transition font-semibold shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 h-5 fill-white"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.1c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.3-63.3-28.3-98.2 0-101.5 82.5-184 184.1-184 49.1 0 95.2 19.1 130 53.9c34.7 34.8 56.1 81 56 130.1 0 101.5-84.6 184.1-185.5 184.1zm101.8-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4c-32.6-16.3-54-29.1-75.5-66c-5.7-9.8 5.7-9.1 16.3-30.2c1.8-3.7 .9-6.9-.5-9.7c-1.4-2.8-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5c-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.5-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.2 59.9 95 84c13.3 5.7 23.7 9.1 31.8 11.6c13.3 4.2 25.5 3.6 35.1 2.2c10.7-1.6 32.8-13.4 37.4-26.4c4.6-13 4.6-24.1 3.2-26.4c-1.3-2.6-5-4.2-10.5-6.9z"/></svg>
+                            Enviar por WhatsApp
+                        </button>
+                        <span id="wa-error" class="text-red-300 text-sm hidden">Escribe un mensaje antes de enviar.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            //@ts-nocheck
+            const btn = document.getElementById('wa-send') as HTMLButtonElement | null;
+            const inputMsg = document.getElementById('wa-message') as HTMLTextAreaElement | null;
+            const inputName = document.getElementById('wa-name') as HTMLInputElement | null;
+            const error = document.getElementById('wa-error');
+            const PHONE = '51982664642'; // 51 + número
+            btn?.addEventListener('click', () => {
+                const name = (inputName?.value || '').trim();
+                const msg = (inputMsg?.value || '').trim();
+                if (!msg) {
+                    error?.classList.remove('hidden');
+                    setTimeout(() => error?.classList.add('hidden'), 2500);
+                    return;
+                }
+                const full = name ? `Hola, soy ${name}. ${msg}` : msg;
+                const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(full)}`;
+                window.open(url, '_blank');
+            });
+        </script>
+    </main>
+    <Footer />
 </Layout>

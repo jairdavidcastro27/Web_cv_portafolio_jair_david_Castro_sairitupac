@@ -1,0 +1,70 @@
+---
+import JobCard from "./JobCard.astro";
+
+const JOBS: Job[] = [
+    {
+        date: "Oct-Dic 2025",
+        title: "Practicante Desarrollador Web y Transformación Digital",
+        company: "Mafefiber",
+        description:
+            "Encargado de la transformación digital de Mafefiber, desarrollando páginas web y sistemas personalizados para el área de textilería. Implementación de soluciones digitales para optimizar procesos.",
+    },
+    {
+        date: "Ene-Sep 2025",
+        title: "Desarrollador Programador y Telecomunicaiones",
+        company: "Printec",
+        description:
+            "Desarrollo de sistemas web personalizados para el área de servicio técnico y gestión de proyectos. Instalación, configuración y mantenimiento de redes informáticas.",
+    },
+    {
+        date: "Oct-Dic 2024",
+        title: "Practicante del área de informática",
+        company: "EsSalud - Hospital Augusto Hernández Mendoza",
+        description:
+            "En el Hospital Augusto Hernández Mendoza, he realizado la resolución de problemas de hardware y software, asegurando el correcto funcionamiento de los equipos. Además, he participado en la configuración y mantenimiento de redes locales, optimizando la conectividad y el rendimiento del sistema. También he desarrollado proyectos con los servidores locales y creado programas web y de escritorio para el área de soporte TI y medicina, contribuyendo a la eficiencia operativa y la gestión de información.",
+    },
+    {
+        date: "2024",
+        title: "Técnico de Telecomunicaciones",
+        company: "Mafefiber",
+        description:
+            "He participado en la configuración de routers y switches, asegurando un óptimo rendimiento de la red. Además, he realizado la instalación y mantenimiento de cableado de redes, incluyendo fibra óptica y Ethernet. También he contribuido en la toma de decisiones técnicas para mejorar la infraestructura de red de la empresa Mafefiber, optimizando su eficiencia y estabilidad.",
+    },
+    {
+        date: "2018-presente",
+        title: "Freelancer en Soporte Técnico y Mantenimiento de Computadoras",
+        description:
+            "Cuento con conocimientos en reparación y mantenimiento de computadoras, lo que me ha permitido realizar trabajos esporádicos de diagnóstico y solución de fallas en hardware y software. Además, llevo a cabo formateo de equipos, instalación y configuración de sistemas operativos, así como la instalación de programas según las necesidades del usuario, asegurando un óptimo rendimiento y funcionalidad.",
+    },
+
+
+];
+---
+
+<div class="w-full max-w-[620px] px-1 md:px-1">
+    {(() => {
+        const VISIBLE = 3;
+        const first = JOBS.slice(0, VISIBLE);
+        const remaining = JOBS.slice(VISIBLE);
+        return (
+            <>
+                <ol class="relative ps-4 before:content-[''] before:absolute before:top-0 before:bottom-0 before:start-0 before:w-[3px] before:bg-gradient-to-b before:from-custom-purple before:via-custom-purple/70 before:to-custom-purple/40 before:rounded-full">
+                    {first.map((job) => <JobCard job={job} />)}
+                </ol>
+                {remaining.length > 0 && (
+                    <details class="mt-2 group">
+                        <summary class="cursor-pointer select-none text-sm text-white/80 hover:text-white font-medium flex items-center gap-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-md bg-custom-purple/30 text-custom-purple-foreground border border-custom-purple/40 backdrop-blur-sm">
+                                Ver más experiencias ({remaining.length})
+                            </span>
+                            <svg class="w-3 h-3 transition-transform group-open:rotate-180" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L5 5L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        </summary>
+                        <ol class="mt-4 relative ps-4 before:content-[''] before:absolute before:top-0 before:bottom-0 before:start-0 before:w-[3px] before:bg-gradient-to-b before:from-custom-purple before:via-custom-purple/70 before:to-custom-purple/40 before:rounded-full">
+                            {remaining.map((job) => <JobCard job={job} />)}
+                        </ol>
+                    </details>
+                )}
+            </>
+        );
+    })()}
+</div>
