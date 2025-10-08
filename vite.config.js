@@ -3,9 +3,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   vite: {
     server: {
-      host: '0.0.0.0', // escucha todas las interfaces
-      port: 4321,
-      allowedHosts: ['*.ngrok-free.app'], // comodín para cualquier subdominio de ngrok
+      host: '0.0.0.0',           // permite conexiones externas
+      port: 4321,                // tu puerto actual
+      allowedHosts: ['.loca.lt'] // permite cualquier subdominio de Localtunnel
     },
   },
 });
