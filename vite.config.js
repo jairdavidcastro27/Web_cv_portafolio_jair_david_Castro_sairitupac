@@ -5,7 +5,7 @@ export default defineConfig({
     server: {
       host: '0.0.0.0',           // permite conexiones externas
       port: 4321,                // tu puerto actual
-      allowedHosts: ['.loca.lt'] // permite cualquier subdominio de Localtunnel
+      allowedHosts: 'all' // permite cualquier subdominio de Localtunnel
     },
   },
 });
