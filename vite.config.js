@@ -3,11 +3,14 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   vite: {
     server: {
-      host: true,     // escucha todas las interfaces
+      host: '0.0.0.0',
       port: 4321,
       strictPort: true,
-      hmr: { host: 'localhost' }, // importante para que HMR funcione
-      allowedHosts: 'all',        // debería permitir cualquier host
+      allowedHosts: ['all', 'miastro.loca.lt', 'localhost'],
+      hmr: {
+        host: 'miastro.loca.lt',
+        protocol: 'wss',
+      },
     },
   },
 });
