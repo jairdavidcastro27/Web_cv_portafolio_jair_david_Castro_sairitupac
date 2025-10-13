@@ -33,91 +33,32 @@ const SKILLS: Skill[] = [
 
 const PROJECTS: Project[] = [
     {
-        title: "Project title",
-        urlImg: "/project1.jpg",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam voluptatem quisquam illo laborum facilis reprehenderit! Ut impedit necessitatibus suscipit vel sapiente, saepe ratione. Labore impedit vel expedita nobis necessitatibus.",
-        link: "https://example.com",
-        usedSkills: [
-            {
-                name: "JavaScript",
-                iconUrl: "/icons/javascript.svg",
-            },
-            {
-                name: "CSS3",
-                iconUrl: "/icons/css.svg",
-            },
-            {
-                name: "React",
-                iconUrl: "/icons/react.svg",
-            },
+        title: "Sistema de control de servicio tecnico",
+        description: `
+            Proyecto desarrollado en mis practicas profesionales en la empresa PRINTEC (Este es una copia del sistema que esta en produccion) donde se me encargo  hacer un sistema de servicios tecnicos donde se administrara el proceso recepcion atencion , diagnostico y entrega de impresaoras o computadoras en general
+            tambien un sistema de pagos por reparacion un sistema de gastos, boleteo y proformas, las estadisiticas de la aplicacion caja y cierres de caja y estadisiticas por tecnicos y los pagos pendientes, es un sistema completo hecho en react, express y postgressql con el framework de bulma css.
+            <br><strong>Para logearte y hacer diagnostico, boleteo, etc:</strong> dale click en las letras <span style="color: #6B46C1; font-weight: bold;">PRINTEC</span> te llevara a la ventana de logeo, RECUERDA QUE PARA HACER ESO SE USA EL CODIGO QR QUE SE MUESTRA AQUI .
+            <br><strong>Credenciales:</strong> <br>Usuario: <span style="color: #E53E3E; font-weight: bold;">72225167</span> <br>Contraseña: <span style="color: #E53E3E; font-weight: bold;">davidgta27</span>
+       `,
+
+        link: "https://reposerviciotecnicoweb-production.up.railway.app" ,
+        images:[
+                  "/project1.PNG",
+                  "/project1_2.PNG",
+                  "/QR.jpg",
+        ],
+        audioUrl: "/audio/descripcion_servici_otecnico.wav",
+    usedSkills: [
+        { name: "JavaScript", iconUrl: "/icons/javascript.svg" },
+        { name: "CSS3", iconUrl: "/icons/css.svg" },
+        { name: "React", iconUrl: "/icons/react.svg" },
+        { name: "PostgreSQL", iconUrl: "/icons/postgresql.png" },
+        { name: "Express", iconUrl: "/icons/express.svg" },
         ],
     },
-    {
-        title: "Project title",
-        urlImg: "/project2.jpg",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam voluptatem quisquam illo laborum facilis reprehenderit! Ut impedit necessitatibus suscipit vel sapiente, saepe ratione. Labore impedit vel expedita nobis necessitatibus.",
-        link: "https://example.com",
-        usedSkills: [
-            {
-                name: "JavaScript",
-                iconUrl: "/icons/javascript.svg",
-            },
-            {
-                name: "CSS3",
-                iconUrl: "/icons/css.svg",
-            },
-            {
-                name: "React",
-                iconUrl: "/icons/react.svg",
-            },
-        ],
-    },
-    {
-        title: "Project title",
-        urlImg: "/project3.jpg",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam voluptatem quisquam illo laborum facilis reprehenderit! Ut impedit necessitatibus suscipit vel sapiente, saepe ratione. Labore impedit vel expedita nobis necessitatibus.",
-        link: "https://example.com",
-        usedSkills: [
-            {
-                name: "JavaScript",
-                iconUrl: "/icons/javascript.png",
-            },
-            {
-                name: "CSS3",
-                iconUrl: "/icons/css.svg",
-            },
-            {
-                name: "React",
-                iconUrl: "/icons/react.png",
-            },
-        ],
-    },
-    {
-        title: "Project title",
-        urlImg: "/project4.jpg",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam voluptatem quisquam illo laborum facilis reprehenderit! Ut impedit necessitatibus suscipit vel sapiente, saepe ratione. Labore impedit vel expedita nobis necessitatibus.",
-        link: "https://example.com",
-        usedSkills: [
-            {
-                name: "JavaScript",
-                iconUrl: "/icons/javascript.png",
-            },
-            {
-                name: "CSS3",
-                iconUrl: "/icons/css.svg",
-            },
-            {
-                name: "React",
-                iconUrl: "/icons/react.png",
-            },
-        ],
-    },
+
 ];
----
+---   
 
 <Layout title="Jair David Castro Sairitupac - ing. sistemas">
     <header

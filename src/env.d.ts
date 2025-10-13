@@ -16,6 +16,7 @@ type Project = {
     title: string;
     description: string;
     usedSkills: Skill[];
-    urlImg: string;
+    images?: string[];
     link: string;
+    audioUrl?: string;
 };

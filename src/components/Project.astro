@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { index, project } = Astro.props;
-const { title, description, urlImg, usedSkills, link } = project;
+const { title, description, images, usedSkills, link } = project;
 
 const itShouldBeReverse = index % 2 == 0;
 const className = itShouldBeReverse
@@ -17,21 +17,37 @@ const className = itShouldBeReverse
 ---
 
 <div class={className}>
-    <Image
-        src={urlImg}
-        alt="Project image"
-        width="128"
-        height="128"
+  <div class="flex flex-col gap-2 md:gap-4">
+    {project.images?.map((imgSrc) => (
+      <img
+        src={imgSrc}
+        alt={title}
         class="w-full object-contain object-center md:max-w-80"
-    />
-    <div class="flex flex-col gap-2 flex-1">
-        <div class="flex flex-col">
-            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold">{title}</h3>
-            <a href={link} class="underline text-blue-600 italic">{link}</a>
-        </div>
-        <div class="mt-2 flex flex-wrap gap-2">
-            {usedSkills.map((usedSkill) => <Skill skill={usedSkill} />)}
-        </div>
-        <p class="text-pretty">{description}</p>
+      />
+    ))}
+  </div>
+
+  <div class="flex flex-col gap-2 flex-1">
+    <div class="flex flex-col">
+      <h3 class="text-xl md:text-2xl lg:text-3xl font-bold">{title}</h3>
+     <a href={link} class="underline text-blue-600 italic" target="_blank" rel="noopener noreferrer">
+  {link}
+</a>
+
     </div>
+
+    <div class="mt-2 flex flex-wrap gap-2">
+      {usedSkills.map((usedSkill) => <Skill skill={usedSkill} />)}
+    </div>
+
+    <p class="text-pretty" set:html={description}></p>
+
+
+    {project.audioUrl && (
+      <audio controls class="mt-2 w-full">
+        <source src={project.audioUrl} type="audio/mpeg" />
+        Tu navegador no soporta el audio.
+      </audio>
+    )}
+  </div>
 </div>
