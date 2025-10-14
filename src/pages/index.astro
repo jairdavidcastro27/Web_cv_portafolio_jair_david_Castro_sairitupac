@@ -83,6 +83,29 @@ const PROJECTS: Project[] = [
         ],
     },
 
+        {
+        title: "Esquema de infraestructura de redes para una clinica hecha en CISCO PACKET TRACER",
+        description: `
+            Este proyecto fue realizado par el curso de Telecomunicaciones de mi universidad fue un proyecto de 3 cursos unificados donde se dividio entre base de datos , web y redes , yo fui seleccionado para redes 
+            por mis conocimientos previos yo diseñe y configure en Cisco los equipos de redes de la clinica y sucursales, utlize vlans , segementacion, servidores y switch capa 3 entre otros, todo resulto conectado correctamente y el servidor sirviendo el sistema intranet para 
+            todas las sucursales ubicadas en diferentes regiones. 
+            <br><strong>Descagar el esquema en Cisco Packet Tracer: EL LINK ES MEDIADFIRE DONDE PODRAN DESCARGAR EL PROYECTO DE CISCO</strong> 
+       `,
+
+        link: "https://www.mediafire.com/file/9qecgpwb01xgkt8/proyectoClinica.pkt/file" ,
+        images:[
+                  "/project3.PNG",
+                  "/project3_2.PNG",
+                  "/project3_3.PNG",
+        ],
+        
+    usedSkills: [
+        { name: "Cisco", iconUrl: "/icons/cisco.svg" },
+    
+
+        ],
+    },
+
 ];
 ---   
 
@@ -100,7 +123,7 @@ const PROJECTS: Project[] = [
                 </div>
                 <div class="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-gradient-to-b from-custom-purple/20 via-custom-purple/10 to-transparent"></div>
                 <h2 class="text-xl md:text-2xl lg:text-3xl border-b border-custom-purple text-center inline-block pb-2 px-4 bg-gradient-to-r from-custom-purple/30 to-transparent rounded-t-md">
-                    Bienvenido a mi portfolio
+                    Bienvenido a mi portafolio
                 </h2>
                 <h3 class="mt-6 text-2xl md:text-3xl lg:text-4xl text-center font-semibold leading-tight md:leading-snug max-w-5xl mx-auto px-4 drop-shadow-sm">
                     Me gusta explorar cómo la informática conecta cada pieza: desde la lógica del código hasta la infraestructura que lo hace posible. 
@@ -123,7 +146,7 @@ const PROJECTS: Project[] = [
     <main>
         <section
             id="about"
-            class="bg-custom-purple_darker flex flex-col md:flex-row gap-6 md:gap-10 p-4 md:py-10 md:px-8"
+            class="bg-custom-purple_darker flex flex-col md:flex-row gap-6 md:gap-10 p-4 md:py-10 md:px-8 md:justify-center"
         >
             <article class="flex flex-col gap-2 md:basis-8/12 md:max-w-[560px]">
                 <h3 class="text-center text-lg md:text-xl text-white font-bold">
@@ -149,7 +172,7 @@ const PROJECTS: Project[] = [
             </article>
             <article class="md:basis-4/12 md:flex-1">
                 <h3
-                    class="text-center md:text-left text-lg md:text-xl text-white font-bold mb-4"
+                    class="text-center text-lg md:text-xl text-white font-bold mb-4"
                 >
                     Experiencia
                 </h3>
@@ -222,6 +245,10 @@ const PROJECTS: Project[] = [
                 window.open(url, '_blank');
             });
         </script>
+    </main>
+    <Footer />
+</Layout>
+pt>
     </main>
     <Footer />
 </Layout>
